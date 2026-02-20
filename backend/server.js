@@ -29,7 +29,11 @@ app.use(express.json({ limit: "5mb" }));
 
 const corsOptions = {
   credentials: true,
-  origin: ["http://localhost:5173"],
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    /^https:\/\/.+\.vercel\.app$/,  // Allow all Vercel deployments
+  ],
 };
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
