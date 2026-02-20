@@ -1,10 +1,11 @@
 import axios from "axios";
 
 // create instance of axios
-export const BASE_URL = "http://localhost:5000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+export const BASE_URL = API_BASE_URL;
 
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: `${API_BASE_URL}/api`,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
@@ -236,7 +237,7 @@ api.interceptors.response.use(
       originalRequest.isRetry = true;
       // refresh token request
       try {
-        await axios.get("http://localhost:5000/api/auth/refresh-tokens", {
+        await axios.get(`${API_BASE_URL}/api/auth/refresh-tokens`, {
           withCredentials: true,
         });
 
