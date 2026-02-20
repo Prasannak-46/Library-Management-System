@@ -37,16 +37,16 @@ const Header = () => {
         <span>Discover, Learn, Thrive: Dive into our Library!</span>
         <div>
           <BiPhoneCall />
-          <span>030339845224</span>
+          <span>+917989193908</span>
           <AiOutlineMail />
-          <span>ggclib@gmail.com</span>
+          <span>ourlib@gmail.com</span>
         </div>
       </div>
 
       <nav className="bg__accent">
         <div className="logo text__primary">
           <GiBookAura className="logo__icon" />
-          <span>GGC Library</span>
+          <span>Libro</span>
         </div>
         <div className="center">
           <NavLink to="/" className="text__color ">
